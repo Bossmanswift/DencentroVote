@@ -1,0 +1,51 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.metrostate.edu.decentrovote'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-jersey'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.flywaydb:flyway-sqlserver'
+	implementation 'org.springframework.kafka:spring-kafka'
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-collections4
+	implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.1'
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.12'
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	// https://mvnrepository.com/artifact/org.bitcoinj/bitcoinj-core
+	implementation group: 'org.bitcoinj', name: 'bitcoinj-core', version: '0.16.1'
+	implementation 'com.github.ipfs:java-ipfs-http-client:1.3.3'
+	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.amqp:spring-rabbit-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

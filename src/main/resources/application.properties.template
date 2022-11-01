@@ -1,0 +1,14 @@
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driverClassName=
+spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+jwt.token.validity=
+jwt.signing.key=
+jwt.authorities.key=
+jwt.token.prefix=
+jwt.header.string=
+
+ipfs.multiaddr.string=
